@@ -20,12 +20,14 @@ a{
     color: rgb(63, 63, 63);
 }
 header{
-    position:relative;
-    width: all;
+    position:fixed;
+    width: 1920px;
     height: 65px;
     background-color: rgb(243, 243, 243);
     display: flex;
     justify-content: center;
+    z-index: 997;
+    opacity: 0.8;
 }
 .logo_box{
     margin-top: 3px;
@@ -46,11 +48,13 @@ header{
     overflow: hidden;
     display: flex;
     justify-content: center;
+    top: 15px;
 }
 .login_box img{
-    margin-top: 17px;
+    margin-top: 0px;
     width: auto;
     height: 30px;
+    z-index: 998;
 }
 
 /* 바디시작 콘텐츠 시작* widht 1700 */
