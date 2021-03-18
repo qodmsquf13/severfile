@@ -111,7 +111,7 @@ window.addEventListener('scroll', () => {
 
     if( Y>= 1600){    
         const job_img = document.querySelector(".job_box img");
-        job_img.style.top="250px";
+        job_img.style.top="300px";
         job_img.style.opacity= "1";
     }
 });
@@ -127,7 +127,7 @@ categoryArr.forEach((img, index) => {
         console.log(index);
         switch(index){
             case 0:{
-                under_var.style.left = "94px";
+                under_var.style.left = "24px";
                 tab_imgArr[0].style.opacity = 1;
                 tab_imgArr[1].style.opacity = 0;
                 tab_imgArr[2].style.opacity = 0;
@@ -135,7 +135,7 @@ categoryArr.forEach((img, index) => {
                 break;
             }
             case 1:{
-                under_var.style.left = "211px";
+                under_var.style.left = "124px";
                 tab_imgArr[0].style.opacity = 0;
                 tab_imgArr[1].style.opacity = 1;
                 tab_imgArr[2].style.opacity = 0;
@@ -143,7 +143,7 @@ categoryArr.forEach((img, index) => {
                 break;
             }
             case 2:{
-                under_var.style.left = "336px";
+                under_var.style.left = "224px";
                 tab_imgArr[0].style.opacity = 0;
                 tab_imgArr[1].style.opacity = 0;
                 tab_imgArr[2].style.opacity = 1;
@@ -151,7 +151,7 @@ categoryArr.forEach((img, index) => {
                 break;
             }
             case 3:{
-                under_var.style.left = "455px";
+                under_var.style.left = "324px";
                 tab_imgArr[0].style.opacity = 0;
                 tab_imgArr[1].style.opacity = 0;
                 tab_imgArr[2].style.opacity = 0;
