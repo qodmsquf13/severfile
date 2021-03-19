@@ -95,7 +95,7 @@ CREATE TABLE `quset` (
 
 CREATE TABLE `estimate` (
   `number` bigint(20)  PRIMARY KEY NOT NULL auto_increment,
-  `company_number` varchar(20) NOT NULL,
+  `company_number` varchar(12) NOT NULL,
   `quset_number` bigint(20) NOT NULL,
   `process` int(11) NOT NULL DEFAULT 0,
   `price` bigint(20) NOT NULL DEFAULT 0,
@@ -253,3 +253,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
