@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `company` (
-  `number` varchar(12) NOT NULL,
+  `number` varchar(12) PRIMARY KEY NOT NULL,
   `id` varchar(20) NOT NULL,
   `pw` varchar(20) NOT NULL,
   `name` varchar(20) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `company` (
 --
 
 CREATE TABLE `consumer` (
-  `number` int(11) NOT NULL auto_increment,
+  `number` int(11) PRIMARY KEY NOT NULL auto_increment,
   `id` varchar(20) NOT NULL,
   `pw` varchar(20) NOT NULL,
   `name` varchar(20) NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `consumer` (
 --
 
 CREATE TABLE `job` (
-  `number` int(11) NOT NULL auto_increment,
+  `number` int(11) PRIMARY KEY NOT NULL auto_increment,
   `id` varchar(20) NOT NULL,
   `pw` varchar(20) NOT NULL,
   `name` varchar(20) NOT NULL,
@@ -76,7 +76,7 @@ CREATE TABLE `job` (
 --
 
 CREATE TABLE `quset` (
-  `number` bigint(20) NOT NULL auto_increment,
+  `number` bigint(20) PRIMARY KEY NOT NULL auto_increment,
   `consumer_number` int(11) NOT NULL,
   `company_number` varchar(12) DEFAULT NULL,
   `text` text NOT NULL,
@@ -94,7 +94,7 @@ CREATE TABLE `quset` (
 --
 
 CREATE TABLE `estimate` (
-  `number` bigint(20) NOT NULL auto_increment,
+  `number` bigint(20)  PRIMARY KEY NOT NULL auto_increment,
   `company_number` varchar(20) NOT NULL,
   `quset_number` bigint(20) NOT NULL,
   `process` int(11) NOT NULL DEFAULT 0,
@@ -108,10 +108,10 @@ CREATE TABLE `estimate` (
 --
 
 CREATE TABLE `review` (
-  `number` bigint(20) NOT NULL auto_increment,
+  `number` bigint(20) PRIMARY KEY NOT NULL auto_increment,
   `price` bigint(20) NOT NULL,
   `text` varchar(500) NOT NULL,
-  `grade` float(4,1) NOT NULL,
+  `grade` float(4,2) NOT NULL,
   `consumer_number` int(11) NOT NULL,
   `company_number` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -120,30 +120,29 @@ CREATE TABLE `review` (
 
 -- --------------------------------------------------------
 
+--
+-- 테이블 구조 `lovecall`
+--
+
+CREATE TABLE `lovecall` (
+  `number` bigint(20) PRIMARY KEY NOT NULL auto_increment,
+  `job_number` int(11) NOT NULL,
+  `company_number` varchar(12) NOT NULL,
+  `price` bigint(20) NOT NULL,
+  `connect` int(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
 -- 테이블 구조 `job_review`
 --
 
 CREATE TABLE `job_review` (
-  `number` bigint(20) NOT NULL auto_increment,
+  `number` bigint(20) PRIMARY KEY NOT NULL auto_increment,
   `lovecall_number` bigint(20) NOT NULL,
-  `grade` float(4,1) NOT NULL,
+  `grade` float(4,2) NOT NULL,
   `text` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- 테이블 구조 `lovecall`
---
-
-CREATE TABLE `lovecall` (
-  `number` bigint(20) NOT NULL auto_increment,
-  `job_number` int(11) NOT NULL,
-  `company_number` varchar(12) NOT NULL,
-  `price` bigint(20) NOT NULL,
-  `connect` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -157,43 +156,44 @@ CREATE TABLE `lovecall` (
 -- 테이블의 인덱스 `company`
 --
 ALTER TABLE `company`
-  ADD PRIMARY KEY (`number`),
+--   ADD PRIMARY KEY (`number`),
   ADD UNIQUE KEY `id` (`id`);
 
 --
 -- 테이블의 인덱스 `consumer`
 --
 ALTER TABLE `consumer`
-  ADD PRIMARY KEY (`number`),
   ADD UNIQUE KEY `id` (`id`);
-
---
--- 테이블의 인덱스 `estimate`
---
-ALTER TABLE `estimate`
-  ADD PRIMARY KEY (`number`),
-  ADD KEY `into estimate cp` (`company_number`),
-  ADD KEY `into estimate q` (`quset_number`);
 
 --
 -- 테이블의 인덱스 `job`
 --
 ALTER TABLE `job`
-  ADD PRIMARY KEY (`number`),
+  -- ADD PRIMARY KEY (`number`),
   ADD UNIQUE KEY `id` (`id`);
+
+--
+-- 테이블의 인덱스 `estimate`
+--
+
+ALTER TABLE `estimate`
+  -- ADD PRIMARY KEY (`number`),
+  ADD KEY `into estimate cp` (`company_number`),
+  ADD KEY `into estimate q` (`quset_number`);
 
 --
 -- 테이블의 인덱스 `job_review`
 --
+
 ALTER TABLE `job_review`
-  ADD PRIMARY KEY (`number`),
+  -- ADD PRIMARY KEY (`number`),
   ADD KEY `into jobrivew call` (`lovecall_number`);
 
 --
 -- 테이블의 인덱스 `lovecall`
 --
 ALTER TABLE `lovecall`
-  ADD PRIMARY KEY (`number`),
+  -- ADD PRIMARY KEY (`number`),
   ADD KEY `into call j` (`job_number`),
   ADD KEY `into call cp` (`company_number`);
 
@@ -201,14 +201,14 @@ ALTER TABLE `lovecall`
 -- 테이블의 인덱스 `quset`
 --
 ALTER TABLE `quset`
-  ADD PRIMARY KEY (`number`),
+  -- ADD PRIMARY KEY (`number`),
   ADD KEY `into quset cm` (`consumer_number`);
 
 --
 -- 테이블의 인덱스 `review`
 --
 ALTER TABLE `review`
-  ADD PRIMARY KEY (`number`),
+  -- ADD PRIMARY KEY (`number`),
   ADD KEY `into review cm` (`consumer_number`),
   ADD KEY `into review cp` (`company_number`);
 
