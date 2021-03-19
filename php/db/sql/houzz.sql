@@ -44,7 +44,7 @@ CREATE TABLE `company` (
 --
 
 CREATE TABLE `consumer` (
-  `number` int(11) NOT NULL,
+  `number` int(11) NOT NULL auto_increment,
   `id` varchar(20) NOT NULL,
   `pw` varchar(20) NOT NULL,
   `name` varchar(20) NOT NULL,
@@ -55,26 +55,11 @@ CREATE TABLE `consumer` (
 -- --------------------------------------------------------
 
 --
--- 테이블 구조 `estimate`
---
-
-CREATE TABLE `estimate` (
-  `number` bigint(20) NOT NULL,
-  `company_number` varchar(20) NOT NULL,
-  `quset_number` bigint(20) NOT NULL,
-  `process` int(11) NOT NULL DEFAULT 0,
-  `price` bigint(20) NOT NULL DEFAULT 0,
-  `file` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- 테이블 구조 `job`
 --
 
 CREATE TABLE `job` (
-  `number` int(11) NOT NULL,
+  `number` int(11) NOT NULL auto_increment,
   `id` varchar(20) NOT NULL,
   `pw` varchar(20) NOT NULL,
   `name` varchar(20) NOT NULL,
@@ -87,11 +72,61 @@ CREATE TABLE `job` (
 -- --------------------------------------------------------
 
 --
+-- 테이블 구조 `quset`
+--
+
+CREATE TABLE `quset` (
+  `number` bigint(20) NOT NULL auto_increment,
+  `consumer_number` int(11) NOT NULL,
+  `company_number` varchar(12) DEFAULT NULL,
+  `text` text NOT NULL,
+  `process` int(1) NOT NULL DEFAULT 0,
+  `imgs` varchar(5000) NOT NULL,
+  `quset_date` datetime NOT NULL DEFAULT current_timestamp(),
+  `start_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `estimate`
+--
+
+CREATE TABLE `estimate` (
+  `number` bigint(20) NOT NULL auto_increment,
+  `company_number` varchar(20) NOT NULL,
+  `quset_number` bigint(20) NOT NULL,
+  `process` int(11) NOT NULL DEFAULT 0,
+  `price` bigint(20) NOT NULL DEFAULT 0,
+  `file` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+--
+-- 테이블 구조 `review`
+--
+
+CREATE TABLE `review` (
+  `number` bigint(20) NOT NULL auto_increment,
+  `price` bigint(20) NOT NULL,
+  `text` varchar(500) NOT NULL,
+  `grade` float(4,1) NOT NULL,
+  `consumer_number` int(11) NOT NULL,
+  `company_number` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+
+-- --------------------------------------------------------
+
+
+--
 -- 테이블 구조 `job_review`
 --
 
 CREATE TABLE `job_review` (
-  `number` bigint(20) NOT NULL,
+  `number` bigint(20) NOT NULL auto_increment,
   `lovecall_number` bigint(20) NOT NULL,
   `grade` float(4,1) NOT NULL,
   `text` varchar(500) NOT NULL
@@ -104,7 +139,7 @@ CREATE TABLE `job_review` (
 --
 
 CREATE TABLE `lovecall` (
-  `number` bigint(20) NOT NULL,
+  `number` bigint(20) NOT NULL auto_increment,
   `job_number` int(11) NOT NULL,
   `company_number` varchar(12) NOT NULL,
   `price` bigint(20) NOT NULL,
@@ -113,35 +148,6 @@ CREATE TABLE `lovecall` (
 
 -- --------------------------------------------------------
 
---
--- 테이블 구조 `quset`
---
-
-CREATE TABLE `quset` (
-  `number` bigint(20) NOT NULL,
-  `consumer_number` int(11) NOT NULL,
-  `company_number` varchar(12) DEFAULT NULL,
-  `text` text NOT NULL,
-  `process` int(1) NOT NULL DEFAULT 0,
-  `imgs` varchar(5000) NOT NULL,
-  `quset_date` datetime NOT NULL DEFAULT current_timestamp(),
-  `start_date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- 테이블 구조 `review`
---
-
-CREATE TABLE `review` (
-  `number` bigint(20) NOT NULL,
-  `price` bigint(20) NOT NULL,
-  `text` varchar(500) NOT NULL,
-  `grade` float(4,1) NOT NULL,
-  `consumer_number` int(11) NOT NULL,
-  `company_number` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 덤프된 테이블의 인덱스
