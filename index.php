@@ -1,3 +1,3 @@
 <?php 
-    Header("Location:app/view/main.html");
+    Header("Location:app/view/main.html#page1");
 ?>

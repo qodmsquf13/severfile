@@ -122,7 +122,7 @@
 
 /* 업체 정보 뷰 팝업 */
 #company_info_pop{
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 .company_pop_close{
     position: absolute;
@@ -189,6 +189,7 @@
     background-color: #ebeaea;
     position: absolute;
     top: 20%;
+    padding: 5%;
 }
 .c_info_review_all{
     width: 30%;
