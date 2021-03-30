@@ -1,0 +1,13 @@
+<header>
+    <div class="logo_box">
+        <a href="http://#">
+            <img src="../public/imgs/logo.png" alt="logo">
+        </a>
+    </div>
+    <div class="login_box">
+        <h4><a href="">SIGN UP</a></h4>
+        <a href="http://#">
+            <img src="../public/imgs/user.png" alt="user">
+        </a>
+    </div>
+</header>
