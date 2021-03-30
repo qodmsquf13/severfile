@@ -1,4 +1,87 @@
+
 .content{
     display: flex;
     justify-content: center;
+    width: 100%;
+    /* height: 100%; */
 }
+ .signup_box{
+    margin-top: 65px;
+    width: 100%;
+    height: 82.4vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.left{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+
+}
+.left img{
+    position: absolute;
+    /* top: 0%; */
+    width: 100%;
+    height: 100%;
+}
+.right{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+
+
+}
+.job_box{
+    width: 100%;
+    height: 50%;
+    background-color: red;
+
+}
+.company_box{
+    width: 100%;
+    height: 50%;
+
+}
+/* 
+.left{
+    width: 63%;
+    height: 100%;
+    background-color: antiquewhite;
+}
+.consumer_box{
+    width: 100%;
+    height: 50%;
+    position:relative;
+    margin-top:22%;
+}
+.left .consumer_box img{
+    width: 100%;
+    height: auto;
+}
+
+
+.right{
+    width: 37%;
+    height: 100%;
+}
+
+.company_box,.job_box{
+    width: 100%;
+    height: 50%;
+    position:relative;
+} 
+
+.right .job_box img{
+    width: 100%;
+    height: auto;
+} 
+
+.right .company_box img{
+    width: 100%;
+    height: auto;
+} */

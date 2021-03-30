@@ -16,7 +16,7 @@ console.log(btn);
 
 setInterval(() => {
     btn1.style.width == "125px";
-    console.log(count);
+    // console.log(count);
     switch(count){
         case 0:{
             marginleft=493;
@@ -104,19 +104,6 @@ setInterval(() => {
 }, 1800);
 
 
-window.addEventListener('scroll', () => {
-	let Y = document.documentElement.scrollTop; // 현재 스크롤바 위치
-	let windowHeight = window.innerHeight; // 스크린 창
-	let fullHeight = document.body.scrollHeight; //  margin 값은 포함 x
-
-    if( Y>= 1600){    
-        const job_img = document.querySelector(".job_box img");
-        job_img.style.top="300px";
-        job_img.style.opacity= "1";
-    }
-});
-
-
 const categoryArr = document.querySelectorAll(".categore li");
 const tab_imgArr = document.querySelectorAll(".tab li");
 const under_var = document.querySelector(".under_var");
@@ -163,11 +150,40 @@ categoryArr.forEach((img, index) => {
     })
 });
 
-// for(var i = 0; i <4; i++){
-//     categoryArr[i].addEventListener('click', () => {
-//         alert("add event");
-//         
-//     });
-// }
+//scroll 이벤트
+var temp_scroll = 0;
+const job_img = document.querySelector(".job_box img");
+window.addEventListener('scroll', () => {
+    let Y=document.documentElement.scrollTop;// 현재 스크롤바 위치
+	let windowHeight = window.innerHeight; // 스크린 창
+	let fullHeight = document.body.scrollHeight; //  margin 값은 포함 x
+    console.log(temp_scroll);
+
+    if(temp_scroll>Y){
+        temp_scroll-(temp_scroll-Y);
+    }else{
+        temp_scroll = Y;
+    }
+
+    if(Y>= 1600){    
+        job_img.style.top="300px";
+        job_img.style.opacity= "1";
+    }else{
+        job_img.style.top="1200px";
+        job_img.style.opacity= "0";
+    }
+
+    // if(temp_scroll<100){
+    //     document.documentElement.scrollTop = 0;
+    // }else if(temp_scroll<=200){
+    //     document.documentElement.scrollTop = 940;
+    // }else if(temp_scroll>=1040){
+    //     document.documentElement.scrollTop = 1680;
+    // }
+});
+
+
+
+
 
 

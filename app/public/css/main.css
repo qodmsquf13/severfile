@@ -11,6 +11,7 @@
     justify-content: center;
     height: 640px;
     position: relative;
+    padding-top: 100px;
 }
 .left{
     width:50%;
@@ -110,7 +111,8 @@ box-shadow: 10px, 10px,10px,10px;
     margin-top: 70px;
 }
 .job_box{
-    height: 700px;
+    margin-top: 200px;
+    height: 1000px;
 }
 .job_box h2{
     font-size: 14pt;
@@ -166,14 +168,30 @@ box-shadow: 10px, 10px,10px,10px;
     opacity: 0;
 }
 
-
-footer{
-    margin-top: 500px;
+.nextpage{
+    position: absolute;
     width: 100%;
-    height: 240px;
-    background-color: rgb(63, 63, 63);
-    bottom: 0px;
+    display: flex;
+    justify-content: center;
 }
+.user_box .nextpage{
+    left: 0px;
+    bottom: -200px;
+}
+.company_box .nextpage{
+    left: 0px;
+    bottom: -200px;
+}
+.job_box .nextpage{
+    left: -50px;
+    bottom: -10px;
+}
+.nextpage img{
+    width: 90px;
+    height: auto;
+    transform: rotate(90deg);
+}
+
 
 @media (max-width:375px){   
     .content{
@@ -185,7 +203,6 @@ footer{
         height:1280px;
         display:grid;
         grid-template-rows:1fr;
-        
     }
   
 }
