@@ -6,7 +6,7 @@
                 Header("Location:../view/signup.html");
                 return true;
             }else if($str === "main"){
-                Header("Location:../view/main.html#pagetrue");
+                Header("Location:../view/main.html#page1");
                 return true;
             }else if($str === "login"){
                 Header("Location:../view/login.html");

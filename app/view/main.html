@@ -11,16 +11,294 @@
         <title>houzz</title>
     </head>
     <body>
+        <div class="login_bg" id="login_modal">
+        
+            <div class="login_modal_container">
+                <div class="login_left">
+                    <div class="login_img_box">
+                        <a href="#"><img src="../public/imgs/join_img/login_c.jpg" alt="houzzInfo"></a>
+                    </div>
+                </div>
+                <div class="login_right">
+                    
+                    <div class="login_form_box">
+                        <div class="login_logo">
+                            <img src="../public/imgs/line_logo.png">
+                        </div>
+                        <div class="log_main">
+                            <div class="log_line">
+                                <h4>Login</h4>
+                                <h5><a href="#">회원가입하시겠습니까 ?</a> </h5>
+                            </div>
+                            <div class="log_input">
+                                <input type="text" placeholder="EMAIL" class="log id">
+                                <input type="password" placeholder="PASSWORD" class="log pw">
+                            </div>
+                            <div class="log_foget">
+                                
+                                <h5>
+                                    <a href="#"> 
+                                    아이디 | 비밀번호 찾기 
+                                    </a>
+                                </h5>
+                            </div>
+                            <div class="log_btn">
+                                <button class="log">LOGIN</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="background" id="join_modal">
+            <div class="join_modal_container">
+                <div class="join_modal_box">
+
+                    <div class="j_modal_left">
+                        <div class="j_user_join_form">
+                        
+                            <div class="u_from_box">
+                                <div class="x"><h1>X</h1></div>
+                                <div class="u_form_logo">
+                                    <img src="../public/imgs/logo_black.png" alt="form_logo">
+                                </div>
+                                
+                                    <div class="u_main_form_box">
+                                       
+                                            <ul class="u_form_line">
+                                            <form action="../controller/route.php?signup_form=0" method="post">
+                                                <li class="u_in_list">
+                                                    <input type="email" placeholder="이메일을 입력해 주세요" id="u_mail" name="email" >
+                                                    <button class="search_btn user_mail">인증</button>
+                                                    
+                                                </li>
+                                                <li class="u_in_list">
+                                                    <input type="text" placeholder="사용하실 비밀번호를 입력해 주세요" id="u_id" class="input" name="pw">
+                                                    
+                                                </li>
+                                                <li class="u_in_list">
+                                                    <input type="text" placeholder="비밀번호 확인" id="u_id" class="input" name="pw_check">
+                                                    <p></p>
+                                                </li>
+                                                <li class="u_in_list">
+                                                    <input type="text" placeholder="성함을 입력해 주세요" id="u_id" class="input" name="name">
+                                                    
+                                                    
+                                                </li>
+                                                <li class="u_in_list">
+                                                    <input type="number" placeholder="휴대폰 번호를 입력해 주세요" id="u_id" class="input" name="phone">
+                                                    
+                                                </li>
+                                                <li class="u_in_list"><input type="submit" value="JOIN" class="join_btn btn_user"></li>
+                                                </form>
+                                            </ul>
+
+                                     
+                                    </div>
+                                
+                                
+                            </div>
+                        </div>
+                        <div class="join_user_box">
+                            <div class="j_user_img">
+                                <img src="../public/imgs/join_img/user.jpg" alt="유저">
+                            </div>
+                            <div class="user_join_btn">
+                                <h1 class="j_pop_title">일반회원</h1>
+                                <h1 class="j_pop_arrow">→</h1>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+                    <div class="j_modal_right">
+
+                        <div class="job_join_form">
+                        
+                            <div class="job_form_box">
+                                <div class="j_x"><h1>X</h1></div>
+                                <div class="u_form_logo">
+                                    <img src="../public/imgs/logo_black.png" alt="form_logo">
+                                </div>
+                                
+                                    <div class="u_main_form_box">
+                                        <ul class="u_form_line">
+                                            <form action="join_consumer.php" method="post" >
+
+                                            <li class="u_in_list">
+                                                <input type="email" placeholder="이메일을 입력해 주세요" id="u_mail" name="j_email">
+                                                <button class="search_btn job_mail">인증</button>
+                                                
+                                            </li>
+                                            <li class="u_in_list">
+                                                <input type="text" placeholder="사용하실 비밀번호를 입력해 주세요" id="u_id" class="input" name="j_pw">
+                                                
+                                            </li>
+                                            <li class="u_in_list">
+                                                <input type="text" placeholder="비밀번호 확인" id="u_id" class="input" name="j_pw_check">
+                                                <p></p>
+                                            </li>
+                                            <li class="u_in_list">
+                                                <input type="email" placeholder="성함을 입력해 주세요" id="u_id" class="input" name="j_name">
+                                                
+                                                
+                                            </li>
+                                            <li class="u_in_list">
+                                                <input type="number" placeholder="휴대폰 번호를 입력해 주세요" id="u_id" class="input" name="j_number">
+                                                
+                                            </li>
+                                            <li class="u_in_list">
+                                                <select class="job_category" name="job_category">
+                                                    <option>전문분야</option>
+                                                    <option>타일</option>
+                                                    <option>도배</option>
+                                                    <option>용접</option>
+                                                    <option>청소</option>
+                                                    <option>설비</option>
+                                                    <option>기타</option>
+                                                </select>
+                                                <select class="career" name="job_career">
+                                                    <option>경력</option>
+                                                    <option>해당 없음</option>
+                                                    <option>1년 미만</option>
+                                                    <option>2년</option>
+                                                    <option>3년</option>
+                                                    <option>4년</option>
+                                                    <option>5년</option>
+                                                    <option>7년</option>
+                                                    <option>8년</option>
+                                                    <option>9년</option>
+                                                    <option>10년 이상</option>
+
+                                                </select>
+                                                
+                                            </li>
+                                            <li class="u_in_list"><input type="submit" value="JOIN" class="join_btn btn_job"></li>
+
+
+                                            </form>
+                                        </ul>
+           
+                                    </div>
+                                </div>
+
+                                
+                        </div>
+
+
+                        <div class="com_join_form">
+                        
+                            <div class="com_form_box">
+                                <div class="c_x"><h1>X</h1></div>
+                                <div class="u_form_logo">
+                                    <img src="../public/imgs/logo_black.png" alt="form_logo">
+                                </div>
+                                
+                                    <div class="u_main_form_box">
+                                        <ul class="u_form_line">
+                                            <form action="join_consumer.php" method="post">
+                                                <li class="c_in_list">
+                                                    <input type="email" placeholder="이메일을 입력해 주세요" id="u_mail" name="com_mail">
+                                                    <button class="search_btn com_mail">인증</button>
+                                                    
+                                                </li>
+                                                <li class="c_in_list">
+                                                    <input type="email" placeholder="사업자 번호를 입력해 주세요" id="u_mail" name="com_num">
+                                                    <button class="search_btn com_mail">인증</button>
+                                                    
+                                                </li>
+                                                <li class="c_in_list">
+                                                    <input type="text" placeholder="사용하실 비밀번호를 입력해 주세요" id="u_id" class="input" name="com_pw">
+                                                    
+                                                </li>
+                                                <li class="c_in_list">
+                                                    <input type="text" placeholder="비밀번호 확인" id="u_id" class="input" name="com_pw_check">
+                                                    <p></p>
+                                                </li>
+                                                <li class="c_in_list">
+                                                    <input type="text" placeholder="성함을 입력해 주세요" id="u_id" class="input" name="com_name">
+                                                    
+                                                    
+                                                </li>
+                                                <li class="c_in_list">
+                                                    <input type="number" placeholder="휴대폰 번호를 입력해 주세요" id="u_id" class="input" name="com_phone">
+                                                    
+                                                </li>
+                                                <li class="c_in_list">
+                                                    <select class="job_category" name="com_category">
+                                                        <option>업체분야</option>
+                                                        <option>타일</option>
+                                                        <option>도배</option>
+                                                        <option>용접</option>
+                                                        <option>청소</option>
+                                                        <option>설비</option>
+                                                        <option>기타</option>
+                                                    </select>
+                                                    <select class="career" name="com_career">
+                                                        <option>경력</option>
+                                                        <option>해당 없음</option>
+                                                        <option>1년 미만</option>
+                                                        <option>2년</option>
+                                                        <option>3년</option>
+                                                        <option>4년</option>
+                                                        <option>5년</option>
+                                                        <option>7년</option>
+                                                        <option>8년</option>
+                                                        <option>9년</option>
+                                                        <option>10년 이상</option>
+
+                                                    </select>
+                                                    
+                                                </li>
+                                                <li class="c_in_list"><input type="submit" value="JOIN" class="join_btn btn_com"></li>
+                                            </form>
+                                        </ul>
+           
+                                    </div>
+                                </div>
+
+                                
+                        </div>
+
+                        <div class="join_job_box">
+                            <div class="j_job_img">
+                                <img src="../public/imgs/join_img/job.jpg" alt="유저">
+                            </div>
+                            <div class="job_join_btn">
+                                <h1 class="job_pop_title">구직자</h1>
+                                <h1 class="job_pop_arrow">→</h1>
+                            </div>
+                        </div>
+
+                        <div class="join_com_box">
+                            <div class="j_com_img">
+                                <img src="../public/imgs/join_img/com.jpg" alt="유저">
+                            </div>
+                            <div class="c_join_btn">
+                                <h1 class="c_pop_title">사업자</h1>
+                                <h1 class="c_pop_arrow">→</h1>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>            
+        </div>
+
         <header>
             <div class="logo_box">
-                <a href="#page1">
+                <a href="http://houzz.kro.kr">
                     <img src="../public/imgs/logo.png" alt="logo">
                 </a>
             </div>
             <div class="login_box">
-                <h4><a href="../controller/route.php?signup">SIGN UP</a></h4>
-                <a href="../controller/route.php?login">
-                    <img src="../public/imgs/user.png" alt="user">
+                <h4 id="sign_up"><a href="#">SIGN UP</a></h4>
+                <a href="#">
+                    <img src="../public/imgs/user.png" alt="user" id="login_icon">
                 </a>
             </div>
         </header>
@@ -35,8 +313,8 @@
                         <!-- slide -->
                         <div class="slide">
                             <li><img src="../public/imgs/review1.jpg" alt="" srcset=""></li>
-                            <li><img src="../public/imgs/review1.jpg" alt="" srcset=""></li>
-                            <li><img src="../public/imgs/review1.jpg" alt="" srcset=""></li>
+                            <li><img src="../public/imgs/review2.jpg" alt="" srcset=""></li>
+                            <li><img src="../public/imgs/review3.jpg" alt="" srcset=""></li>
                         </div>
                     </div>
                     <div class="right">

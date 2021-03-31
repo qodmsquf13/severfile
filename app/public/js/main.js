@@ -181,9 +181,88 @@ window.addEventListener('scroll', () => {
     //     document.documentElement.scrollTop = 1680;
     // }
 });
+//메인모달
+const joinOpenBtn = document.querySelector('#sign_up');
+const joinPop = document.querySelector('#join_modal');
+// const back = document.querySelector('.background');
+
+joinOpenBtn.addEventListener("click",function(){
+    joinPop.style.display = "block";
+});
+// back.addEventListener("click", function(){
+
+//     back.style.display = "none";
+// });
+
+//서브 모달
+const joinForm = document.querySelector('.j_user_join_form');
+const joinArrow = document.querySelector('.j_pop_arrow');
+const close = document.querySelector('.x');
+joinArrow.addEventListener("click",function(){
+
+    joinForm.style.display = "block";
+    joinForm.style.right = "0";
+    
+});
+close.addEventListener("click",function(){
+
+    joinForm.style.display = "none";
+});
+
+const jobForm = document.querySelector('.job_join_form');
+const jobArrow = document.querySelector('.job_pop_arrow');
+const j_close = document.querySelector('.j_x');
+const jobMainImg = document.querySelector('.join_job_box');
+const userMainImg = document.querySelector('.join_user_box'); 
+const comMainImg = document.querySelector('.join_com_box'); 
+const jobBtn = document.querySelector('.job_join_btn');
+const comArrow = document.querySelector('.c_join_btn');
+const comForm = document.querySelector('.com_join_form');
+const c_close = document.querySelector('.c_x');
+jobArrow.addEventListener("click",function(){
+
+    jobForm.style.display = "block";
+    jobMainImg.style.left = "-100%";
+    jobMainImg.style.height = "100%";
+    jobMainImg.style.width = "150%";
+    comMainImg.style.display = "none";
+    userMainImg.style.display = "none";
+    jobBtn.style.display = "none";
+    
+    
+});
+comArrow.addEventListener("click",function(){
+
+    comForm.style.display = "block";
+    comMainImg.style.left = "-100%";
+    comMainImg.style.height = "100%";
+    comMainImg.style.width = "130%";
+    comMainImg.style.transform = "scaleX(-1)";
+    jobMainImg.style.display = "none";
+    userMainImg.style.display = "none";
+    
+});
+c_close.addEventListener("click",function(){
+
+    window.location.reload();
+});
+j_close.addEventListener("click",function(){
+
+    window.location.reload();
+});
+
+//로그인 모달
+
+const login_icon = document.querySelector('#login_icon');
+const login_modal = document.querySelector('#login_modal');
+const login_bg = document.querySelector('.login_bg');
 
 
+login_icon.addEventListener("click", function(){
+    
+    login_modal.style.display = "block";
+});
 
-
-
-
+login_bg.addEventListener("click",function(){
+    login_modal.style.display = "none";
+})
