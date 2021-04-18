@@ -1,10 +1,45 @@
 <?php 
+// "https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"
+// "https://code.jquery.com/jquery-1.12.4.min.js"
+// "https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"
+// function buy_button() {
+//     var IMP = window.IMP; // 생략가능
+//     IMP.init('imp24955518'); // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+
+//     IMP.request_pay({
+//         pg: 'kakao', // 결제방식
+//         pay_method: 'card', // 결제 수단
+//         merchant_uid: 'merchant_' + new Date().getTime(),
+//         name: '조이조이 결제', // order 테이블에 들어갈 주문명 혹은 주문 번호
+//         amount: '1', // 결제 금액
+//         buyer_email: '', // 구매자 email
+//         buyer_name: '', // 구매자 이름
+//         buyer_tel: '', // 구매자 전화번호
+//         buyer_addr: '', // 구매자 주소
+//         buyer_postcode: '', // 구매자 우편번호
+//         m_redirect_url: '/khx/payEnd.action' // 결제 완료 후 보낼 컨트롤러의 메소드명
+//     }, function (rsp) {
+//         if (rsp.success) { // 성공시
+//             var msg = '결제가 완료되었습니다.';
+//             msg += '고유ID : ' + rsp.imp_uid;
+//             msg += '상점 거래ID : ' + rsp.merchant_uid;
+//             msg += '결제 금액 : ' + rsp.paid_amount;
+//             msg += '카드 승인번호 : ' + rsp.apply_num;
+//         } else { // 실패시
+//             var msg = '결제에 실패하였습니다.';
+//             msg += '에러내용 : ' + rsp.error_msg;
+//         }
+//     });
+// }
     class payment{
-        function pay(){
+        function fierst_pay(){
 
         }
-        function refund(){
+        function interim_payment(){
 
+        }
+        function final_payment(){
+            
         }
     }
 ?>

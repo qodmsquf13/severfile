@@ -54,4 +54,10 @@
             
         }
     }
+
+    class prosses{
+        function Update_prosses($written_category,$db){
+            
+        }
+    }
 ?>
